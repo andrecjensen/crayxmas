@@ -1,0 +1,210 @@
+body {
+    margin: auto;
+}
+
+#game {
+    width: 1920px;
+    height: 1080px;
+    background-image: url(elements/Game%20screen%20background.svg);
+
+    position: relative;
+
+}
+
+/* ELEMENTS */
+
+#game_foreground {
+    width: 1920px;
+    height: 1080px;
+    background-image: url(elements/Game%20screen%20forgrund.svg);
+    background-repeat: no-repeat;
+
+    position: absolute;
+}
+
+#pudding {
+    width: 1920px;
+    height: 1080px;
+    background-image: url(elements/Game%20screen%20Pudding.svg);
+    position: absolute;
+}
+
+#pudding_hideback {
+    width: 1920px;
+    height: 1080px;
+    background-image: url(elements/Game%20screen%20Pudding%20hide%20back.svg);
+    position: absolute;
+}
+
+#pudding_hidefront {
+    width: 1920px;
+    height: 1080px;
+    background-image: url(elements/Game%20screen%20Pudding%20hide%20front.svg);
+    position: absolute;
+}
+
+
+#bowl {
+    width: 1920px;
+    height: 1080px;
+    background-image: url(elements/Game%20screen%20bowl.svg);
+    position: absolute;
+}
+
+#ui-liv {
+    width: 200px;
+    height: 200px;
+    background-image: url(elements/UI%20liv.svg);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 30px;
+}
+
+#ui-livminus {
+    width: 200px;
+    height: 200px;
+    background-image: url(elements/UI%20liv%20minus.svg);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 220px;
+}
+
+#ui-livminus2 {
+    width: 200px;
+    height: 200px;
+    background-image: url(elements/UI%20liv%20minus.svg);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 410px;
+}
+
+#ui-timer {
+    width: 1600px;
+    height: 500px;
+    background-image: url(elements/UI%20timer.svg);
+    background-repeat: no-repeat;
+    background-size: 600px;
+
+    position: absolute;
+
+    left: 660px;
+}
+
+#ui-counter {
+    width: 600px;
+    height: 290px;
+    background-image: url(elements/Counter.svg);
+    background-repeat: no-repeat;
+    background-size: 300px;
+
+    position: absolute;
+
+    left: 1600px;
+}
+
+#ui-setting {
+    width: 400px;
+    height: 400px;
+    background-image: url(elements/Settings.svg);
+    background-repeat: no-repeat;
+    background-size: 170px;
+
+    position: absolute;
+
+    left: 1720px;
+    top: 130px;
+}
+
+
+
+#start {
+    position: relative;
+
+    display: none;
+}
+
+#start .baggrund {
+    width: 1920px;
+    height: 1080px;
+    background-image: url(elements/Titel%20Baggrund.svg);
+
+    position: absolute;
+}
+
+#start .midgrund {
+    width: 1920px;
+    height: 1080px;
+    background-image: url(elements/Titel%20Midgrund.svg);
+
+    position: absolute;
+}
+
+#start .forgrund {
+    width: 1920px;
+    height: 1080px;
+    background-image: url(elements/Titel%20Forgrund.svg);
+
+    position: absolute;
+}
+
+#start .knap {
+    width: 1920px;
+    height: 1080px;
+    background-image: url(elements/Knap%20-%20Spil%20nu.svg);
+    background-size: 420px;
+    background-repeat: no-repeat;
+
+    position: absolute;
+
+    left: 750px;
+    top: 700px;
+}
+
+#gameover {
+    width: 1920px;
+    height: 1080px;
+    background-image: url(elements/Gamer%20over%20loose.svg);
+
+    position: relative;
+
+    display: none;
+}
+
+#gameover .replay {
+    width: 400px;
+    height: 400px;
+    background-image: url(elements/Replay%20icon.svg);
+    background-repeat: no-repeat;
+
+    position: absolute;
+
+    left: 750px;
+    top: 600px;
+
+}
+
+#levelcomplete {
+    width: 1920px;
+    height: 1080px;
+    background-image: url(elements/Game%20over%20win.svg);
+
+    position: relative;
+
+    display: none;
+}
+
+#levelcomplete .replay {
+    width: 400px;
+    height: 400px;
+    background-image: url(elements/Replay%20icon.svg);
+    background-repeat: no-repeat;
+
+    position: absolute;
+
+    left: 1360px;
+    top: 600px;
+
+}
