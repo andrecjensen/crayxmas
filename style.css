@@ -1,210 +1,666 @@
 body {
     margin: auto;
+    /*    background-color: #050a0f;*/
+}
+
+#screen {
+    position: relative;
+
+    width: 100vw;
+    height: 56.25vw;
+
+    overflow: hidden;
 }
 
 #game {
-    width: 1920px;
-    height: 1080px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     background-image: url(elements/Game%20screen%20background.svg);
+    background-size: 100%;
 
-    position: relative;
-
+    /*    display: none;*/
 }
 
-/* ELEMENTS */
+/* STILL ELEMENTS */
 
 #game_foreground {
-    width: 1920px;
-    height: 1080px;
-    background-image: url(elements/Game%20screen%20forgrund.svg);
-    background-repeat: no-repeat;
-
     position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Game%20screen%20forgrund.svg);
+    background-size: 100%;
 }
 
 #pudding {
-    width: 1920px;
-    height: 1080px;
-    background-image: url(elements/Game%20screen%20Pudding.svg);
     position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Game%20screen%20Pudding.svg);
+    background-size: 100%;
 }
 
 #pudding_hideback {
-    width: 1920px;
-    height: 1080px;
-    background-image: url(elements/Game%20screen%20Pudding%20hide%20back.svg);
     position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Game%20screen%20Pudding%20hide%20back.svg);
+    background-size: 100%;
+    z-index: 2;
 }
 
 #pudding_hidefront {
-    width: 1920px;
-    height: 1080px;
-    background-image: url(elements/Game%20screen%20Pudding%20hide%20front.svg);
     position: absolute;
-}
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Game%20screen%20Pudding%20hide%20front.svg);
+    background-size: 100%;
 
+    z-index: 3;
+
+}
 
 #bowl {
-    width: 1920px;
-    height: 1080px;
-    background-image: url(elements/Game%20screen%20bowl.svg);
     position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Game%20screen%20bowl.svg);
+    background-size: 100%;
+    z-index: 4;
 }
 
-#ui-liv {
-    width: 200px;
-    height: 200px;
-    background-image: url(elements/UI%20liv.svg);
-    background-size: 200px;
-    background-repeat: no-repeat;
+/* Farvekridte øverst venstre */
+
+#pop-farvekridt1-upleft {
     position: absolute;
-    left: 30px;
+    width: 10vw;
+    height: 21vw;
+    background-image: url(elements/Crayon%20Blue.svg);
+    background-size: 100%;
+
+    left: 26vw;
+    top: 34vw;
+
+    z-index: 1;
+
+    animation-delay: 1s;
+
+
+}
+
+#pop-farvekridt2-upleft {
+    position: absolute;
+    width: 10vw;
+    height: 21vw;
+    background-image: url(elements/Crayon%20green.svg);
+    background-size: 100%;
+
+    left: 26vw;
+    top: 34vw;
+
+    z-index: 1;
+
+    animation-delay: 3s;
+
+}
+
+
+
+#pop-farvekridt3-upleft {
+    position: absolute;
+    width: 10vw;
+    height: 21vw;
+    background-image: url(elements/Crayon%20Yellow.svg);
+    background-size: 100%;
+
+    left: 26vw;
+    top: 32vw;
+
+    z-index: 1;
+
+    animation-delay: 5s;
+
+}
+
+#pop-almond-upleft {
+    position: absolute;
+    width: 10vw;
+    height: 16vw;
+    background-image: url(elements/God%20ting%20-%20mandel.svg);
+    background-size: 100%;
+
+    left: 27vw;
+    top: 34vw;
+    transform: rotate(-10deg);
+
+    z-index: 1;
+
+    animation-delay: 7s;
+
+}
+
+#pop-butter-upleft {
+    position: absolute;
+    width: 10vw;
+    height: 16vw;
+    background-image: url(elements/God%20ting%20-%20sm%C3%B8r.svg);
+    background-size: 100%;
+
+    left: 27vw;
+    top: 34vw;
+    transform: rotate(-10deg);
+
+    z-index: 1;
+
+    animation-delay: 9s;
+
+}
+
+
+.pop {
+    animation-name: pop;
+    animation-duration: 20s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pop {
+    0% {
+
+        transform: translateY(0vw);
+    }
+
+    4% {
+
+        transform: translateY(0vw);
+    }
+
+    6% {
+        transform: translateY(-10vw);
+    }
+
+    7% {
+
+        transform: translateY(0vw);
+    }
+
+    100% {
+        transform: translateY(0vw);
+    }
+}
+
+/* Farvekridte øverst midt */
+
+#pop-farvekridt1-upmid {
+    position: absolute;
+    width: 10vw;
+    height: 21vw;
+    background-image: url(elements/Crayon%20Blue.svg);
+    background-size: 100%;
+
+    left: 42vw;
+    top: 29vw;
+
+    z-index: 1;
+}
+
+#pop-farvekridt2-upmid {
+    position: absolute;
+    width: 10vw;
+    height: 21vw;
+    background-image: url(elements/Crayon%20green.svg);
+    background-size: 100%;
+
+    left: 42vw;
+    top: 29vw;
+    z-index: 1;
+}
+
+#pop-farvekridt3-upmid {
+    position: absolute;
+    width: 10vw;
+    height: 21vw;
+    background-image: url(elements/Crayon%20Yellow.svg);
+    background-size: 100%;
+
+    left: 42vw;
+    top: 29vw;
+    z-index: 1;
+}
+
+#pop-almond-upmid {
+    position: absolute;
+    width: 10vw;
+    height: 16vw;
+    background-image: url(elements/God%20ting%20-%20mandel.svg);
+    background-size: 100%;
+
+    left: 42vw;
+    top: 29vw;
+
+    z-index: 1;
+}
+
+#pop-butter-upmid {
+    position: absolute;
+    width: 10vw;
+    height: 16vw;
+    background-image: url(elements/God%20ting%20-%20sm%C3%B8r.svg);
+    background-size: 100%;
+
+    left: 42vw;
+    top: 29vw;
+
+    z-index: 1;
+}
+
+
+
+/* Farvekridte øverst højre */
+
+#pop-farvekridt1-upright {
+    position: absolute;
+    width: 10vw;
+    height: 21vw;
+    background-image: url(elements/Crayon%20Blue.svg);
+    background-size: 100%;
+
+    left: 60vw;
+    top: 32vw;
+
+    z-index: 1;
+}
+
+#pop-farvekridt2-upright {
+    position: absolute;
+    width: 10vw;
+    height: 21vw;
+    background-image: url(elements/Crayon%20green.svg);
+    background-size: 100%;
+
+    left: 60vw;
+    top: 33vw;
+
+    z-index: 1;
+}
+
+#pop-farvekridt3-upright {
+    position: absolute;
+    width: 10vw;
+    height: 21vw;
+    background-image: url(elements/Crayon%20Yellow.svg);
+    background-size: 100%;
+
+    left: 60vw;
+    top: 32vw;
+
+    z-index: 1;
+}
+
+#pop-almond-upright {
+    position: absolute;
+    width: 10vw;
+    height: 16vw;
+    background-image: url(elements/God%20ting%20-%20mandel.svg);
+    background-size: 100%;
+
+    left: 60vw;
+    top: 32vw;
+
+    transform: rotate(10deg);
+
+    z-index: 1;
+}
+
+#pop-butter-upright {
+    position: absolute;
+    width: 10vw;
+    height: 16vw;
+    background-image: url(elements/God%20ting%20-%20sm%C3%B8r.svg);
+    background-size: 100%;
+
+    left: 61vw;
+    top: 32vw;
+
+    transform: rotate(10deg);
+
+    z-index: 1;
+}
+
+/* Farvekridte nederst venstre */
+
+#pop-farvekridt1-downleft {
+    position: absolute;
+    width: 10vw;
+    height: 21vw;
+    background-image: url(elements/Crayon%20Blue.svg);
+    background-size: 100%;
+
+    left: 29vw;
+    top: 42vw;
+
+    z-index: 2;
+}
+
+#pop-farvekridt2-downleft {
+    position: absolute;
+    width: 10vw;
+    height: 21vw;
+    background-image: url(elements/Crayon%20green.svg);
+    background-size: 100%;
+
+    left: 29vw;
+    top: 42vw;
+
+    z-index: 2;
+}
+
+#pop-farvekridt3-downleft {
+    position: absolute;
+    width: 10vw;
+    height: 21vw;
+    background-image: url(elements/Crayon%20Yellow.svg);
+    background-size: 100%;
+
+    left: 29vw;
+    top: 42vw;
+
+    z-index: 2;
+}
+
+#pop-almond-downleft {
+    position: absolute;
+    width: 10vw;
+    height: 16vw;
+    background-image: url(elements/God%20ting%20-%20mandel.svg);
+    background-size: 100%;
+
+    left: 29vw;
+    top: 42vw;
+
+    transform: rotate(10deg);
+
+    z-index: 2;
+}
+
+#pop-butter-downleft {
+    position: absolute;
+    width: 10vw;
+    height: 16vw;
+    background-image: url(elements/God%20ting%20-%20sm%C3%B8r.svg);
+    background-size: 100%;
+
+    left: 29vw;
+    top: 42vw;
+
+    transform: rotate(10deg);
+
+    z-index: 2;
+}
+
+/* Farvekridte nederst højre */
+
+#pop-farvekridt1-downright {
+    position: absolute;
+    width: 10vw;
+    height: 21vw;
+    background-image: url(elements/Crayon%20Blue.svg);
+    background-size: 100%;
+
+    left: 52vw;
+    top: 42vw;
+
+    z-index: 2;
+}
+
+#pop-farvekridt2-downright {
+    position: absolute;
+    width: 10vw;
+    height: 21vw;
+    background-image: url(elements/Crayon%20green.svg);
+    background-size: 100%;
+
+    left: 48vw;
+    top: 42vw;
+
+    z-index: 2;
+}
+
+#pop-farvekridt3-downright {
+    position: absolute;
+    width: 10vw;
+    height: 21vw;
+    background-image: url(elements/Crayon%20Yellow.svg);
+    background-size: 100%;
+
+    left: 57vw;
+    top: 42vw;
+
+    z-index: 2;
+}
+
+#pop-almond-downright {
+    position: absolute;
+    width: 10vw;
+    height: 16vw;
+    background-image: url(elements/God%20ting%20-%20mandel.svg);
+    background-size: 100%;
+
+    left: 49vw;
+    top: 42vw;
+    transform: rotate(-3deg);
+
+    z-index: 2;
+}
+
+#pop-butter-downright {
+    position: absolute;
+    width: 10vw;
+    height: 16vw;
+    background-image: url(elements/God%20ting%20-%20sm%C3%B8r.svg);
+    background-size: 100%;
+
+    left: 56vw;
+    top: 42vw;
+    transform: rotate(5deg);
+
+    z-index: 2;
+}
+
+
+/* UI ELEMENTS */
+
+#ui-liv {
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    background-image: url(elements/UI%20liv.svg);
+    background-size: 100%;
+    left: 2vw;
+    top: 1vw;
 }
 
 #ui-livminus {
-    width: 200px;
-    height: 200px;
-    background-image: url(elements/UI%20liv%20minus.svg);
-    background-size: 200px;
-    background-repeat: no-repeat;
     position: absolute;
-    left: 220px;
+    width: 10vw;
+    height: 10vw;
+    background-image: url(elements/UI%20liv%20minus.svg);
+    background-size: 100%;
+    left: 13vw;
+    top: 1vw;
 }
 
 #ui-livminus2 {
-    width: 200px;
-    height: 200px;
-    background-image: url(elements/UI%20liv%20minus.svg);
-    background-size: 200px;
-    background-repeat: no-repeat;
     position: absolute;
-    left: 410px;
+    width: 10vw;
+    height: 10vw;
+    background-image: url(elements/UI%20liv%20minus.svg);
+    background-size: 100%;
+    left: 24vw;
+    top: 1vw;
 }
 
 #ui-timer {
-    width: 1600px;
-    height: 500px;
-    background-image: url(elements/UI%20timer.svg);
-    background-repeat: no-repeat;
-    background-size: 600px;
-
     position: absolute;
-
-    left: 660px;
+    width: 30vw;
+    height: 10vw;
+    background-image: url(elements/UI%20timer.svg);
+    background-size: 100%;
+    left: 35vw;
+    top: 1vw;
 }
 
 #ui-counter {
-    width: 600px;
-    height: 290px;
-    background-image: url(elements/Counter.svg);
-    background-repeat: no-repeat;
-    background-size: 300px;
-
     position: absolute;
-
-    left: 1600px;
+    width: 15vw;
+    height: 7vw;
+    background-image: url(elements/Counter.svg);
+    background-size: 100%;
+    left: 84vw;
+    top: 2vw;
 }
 
 #ui-setting {
-    width: 400px;
-    height: 400px;
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
     background-image: url(elements/Settings.svg);
     background-repeat: no-repeat;
-    background-size: 170px;
+    background-size: 100%;
 
-    position: absolute;
-
-    left: 1720px;
-    top: 130px;
+    left: 89vw;
+    top: 8vw;
 }
 
-
+/* STARTSIDE */
 
 #start {
-    position: relative;
-
     display: none;
 }
 
 #start .baggrund {
-    width: 1920px;
-    height: 1080px;
-    background-image: url(elements/Titel%20Baggrund.svg);
-
     position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Titel%20Baggrund.svg);
+    background-size: 100%;
 }
 
 #start .midgrund {
-    width: 1920px;
-    height: 1080px;
-    background-image: url(elements/Titel%20Midgrund.svg);
-
     position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Titel%20Midgrund.svg);
+    background-size: 100%;
 }
 
 #start .forgrund {
-    width: 1920px;
-    height: 1080px;
-    background-image: url(elements/Titel%20Forgrund.svg);
-
     position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Titel%20Forgrund.svg);
+    background-size: 100%;
 }
 
 #start .knap {
-    width: 1920px;
-    height: 1080px;
-    background-image: url(elements/Knap%20-%20Spil%20nu.svg);
-    background-size: 420px;
-    background-repeat: no-repeat;
-
     position: absolute;
+    width: 24vw;
+    height: 10vw;
+    background-image: url(elements/Knap%20-%20Spil%20nu.svg);
+    background-size: 100%;
 
-    left: 750px;
-    top: 700px;
+    left: 38vw;
+    top: 35vw;
 }
 
-#gameover {
-    width: 1920px;
-    height: 1080px;
-    background-image: url(elements/Gamer%20over%20loose.svg);
+/* Game over tabt */
 
-    position: relative;
+#gameover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Gamer%20over%20loose.svg);
+    background-size: 100%;
 
     display: none;
 }
 
 #gameover .replay {
-    width: 400px;
-    height: 400px;
-    background-image: url(elements/Replay%20icon.svg);
-    background-repeat: no-repeat;
-
     position: absolute;
+    width: 20vw;
+    height: 20vw;
+    background-image: url(elements/Replay%20icon.svg);
+    background-size: 100%;
 
-    left: 750px;
-    top: 600px;
+    left: 40vw;
+    top: 32vw;
 
 }
 
-#levelcomplete {
-    width: 1920px;
-    height: 1080px;
-    background-image: url(elements/Game%20over%20win.svg);
+/* Game over vundet */
 
-    position: relative;
+#levelcomplete {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Game%20over%20win.svg);
+    background-size: 100%;
 
     display: none;
 }
 
 #levelcomplete .replay {
-    width: 400px;
-    height: 400px;
-    background-image: url(elements/Replay%20icon.svg);
-    background-repeat: no-repeat;
-
     position: absolute;
+    width: 20vw;
+    height: 20vw;
+    background-image: url(elements/Replay%20icon.svg);
+    background-size: 100%;
 
-    left: 1360px;
-    top: 600px;
+    left: 73.5vw;
+    top: 31.5vw;
+}
 
+/* Settings */
+
+#settings {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Settings%20screen.svg);
+    background-size: 100%;
+
+    display: none;
+}
+
+#settings .close {
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+    background-image: url(elements/Setting%20close.svg);
+    background-size: 100%;
+
+    left: 61vw;
+    top: 10vw;
+}
+
+#settings .soundon {
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+    background-image: url(elements/Setting%20sound%20on.svg);
+    background-size: 100%;
+
+    left: 35vw;
+    top: 25vw;
+}
+
+#settings .soundoff {
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+    background-image: url(elements/Setting%20sound%20off.svg);
+    background-size: 100%;
+
+    left: 49vw;
+    top: 25vw;
 }
