@@ -10,6 +10,8 @@ body {
     height: 56.25vw;
 
     overflow: hidden;
+
+    cursor: cell;
 }
 
 #game {
@@ -18,8 +20,191 @@ body {
     height: 100%;
     background-image: url(elements/Game%20screen%20background.svg);
     background-size: 100%;
+}
 
-    /*    display: none;*/
+.hide {
+    display: none;
+}
+
+.showgamescreen {
+    animation-name: showgame;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes showgame {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* STARTSIDE */
+
+#start {}
+
+.hidestartscreen {
+    animation-name: startfade;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes startfade {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+#start .baggrund {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Titel%20Baggrund.svg);
+    background-size: 100%;
+}
+
+#start .midgrund {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Titel%20Midgrund.svg);
+    background-size: 100%;
+}
+
+#start .forgrund {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Titel%20Forgrund.svg);
+    background-size: 100%;
+}
+
+#start .play {
+    position: absolute;
+    width: 24vw;
+    height: 10vw;
+    background-image: url(elements/Knap%20-%20Spil%20nu.svg);
+    background-size: 100%;
+
+    left: 38vw;
+    top: 35vw;
+}
+
+.pulse {
+    animation-name: pulse_knap;
+    animation-duration: 1.7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+}
+
+@keyframes pulse_knap {
+    0% {
+        transform: scale(0.97);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Game over tabt */
+
+#gameover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Gamer%20over%20loose.svg);
+    background-size: 100%;
+
+    display: none;
+}
+
+#gameover .replay {
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    background-image: url(elements/Replay%20icon.svg);
+    background-size: 100%;
+
+    left: 40vw;
+    top: 32vw;
+
+}
+
+/* Game over vundet */
+
+#levelcomplete {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Game%20over%20win.svg);
+    background-size: 100%;
+
+    display: none;
+}
+
+#levelcomplete .replay {
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    background-image: url(elements/Replay%20icon.svg);
+    background-size: 100%;
+
+    left: 73.5vw;
+    top: 31.5vw;
+}
+
+/* Settings */
+
+#settings {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(elements/Settings%20screen.svg);
+    background-size: 100%;
+
+    display: none;
+}
+
+#settings .close {
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+    background-image: url(elements/Setting%20close.svg);
+    background-size: 100%;
+
+    left: 61vw;
+    top: 10vw;
+}
+
+#settings .soundon {
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+    background-image: url(elements/Setting%20sound%20on.svg);
+    background-size: 100%;
+
+    left: 35vw;
+    top: 25vw;
+}
+
+#settings .soundoff {
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+    background-image: url(elements/Setting%20sound%20off.svg);
+    background-size: 100%;
+
+    left: 49vw;
+    top: 25vw;
 }
 
 /* STILL ELEMENTS */
@@ -159,7 +344,7 @@ body {
 
 .pop {
     animation-name: pop;
-    animation-duration: 20s;
+    animation-duration: 18s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 }
@@ -179,7 +364,7 @@ body {
         transform: translateY(-10vw);
     }
 
-    7% {
+    9% {
 
         transform: translateY(0vw);
     }
@@ -203,7 +388,7 @@ body {
 
     z-index: 1;
 
-    animation-delay: 9s;
+    animation-delay: 2s;
 
 }
 
@@ -217,6 +402,8 @@ body {
     left: 42vw;
     top: 29vw;
     z-index: 1;
+
+    animation-delay: 4s;
 }
 
 #pop-farvekridt3-upmid {
@@ -229,6 +416,8 @@ body {
     left: 42vw;
     top: 29vw;
     z-index: 1;
+
+    animation-delay: 6s;
 }
 
 #pop-almond-upmid {
@@ -242,6 +431,8 @@ body {
     top: 29vw;
 
     z-index: 1;
+
+    animation-delay: 8s;
 }
 
 #pop-butter-upmid {
@@ -255,6 +446,8 @@ body {
     top: 29vw;
 
     z-index: 1;
+
+    animation-delay: 16s;
 }
 
 
@@ -272,6 +465,8 @@ body {
     top: 32vw;
 
     z-index: 1;
+
+    animation-delay: 3s;
 }
 
 #pop-farvekridt2-upright {
@@ -285,6 +480,8 @@ body {
     top: 33vw;
 
     z-index: 1;
+
+    animation-delay: 12s;
 }
 
 #pop-farvekridt3-upright {
@@ -298,6 +495,8 @@ body {
     top: 32vw;
 
     z-index: 1;
+
+    animation-delay: 5s;
 }
 
 #pop-almond-upright {
@@ -313,6 +512,8 @@ body {
     transform: rotate(10deg);
 
     z-index: 1;
+
+    animation-delay: 17s;
 }
 
 #pop-butter-upright {
@@ -328,6 +529,8 @@ body {
     transform: rotate(10deg);
 
     z-index: 1;
+
+    animation-delay: 8s;
 }
 
 /* Farvekridte nederst venstre */
@@ -343,6 +546,8 @@ body {
     top: 42vw;
 
     z-index: 2;
+
+    animation-delay: 6s;
 }
 
 #pop-farvekridt2-downleft {
@@ -353,9 +558,11 @@ body {
     background-size: 100%;
 
     left: 29vw;
-    top: 42vw;
+    top: 43vw;
 
     z-index: 2;
+
+    animation-delay: 2s;
 }
 
 #pop-farvekridt3-downleft {
@@ -369,6 +576,8 @@ body {
     top: 42vw;
 
     z-index: 2;
+
+    animation-delay: 10s;
 }
 
 #pop-almond-downleft {
@@ -399,6 +608,8 @@ body {
     transform: rotate(10deg);
 
     z-index: 2;
+
+    animation-delay: 16s;
 }
 
 /* Farvekridte nederst højre */
@@ -414,6 +625,10 @@ body {
     top: 42vw;
 
     z-index: 2;
+
+    animation-delay: 11s;
+
+
 }
 
 #pop-farvekridt2-downright {
@@ -424,9 +639,11 @@ body {
     background-size: 100%;
 
     left: 48vw;
-    top: 42vw;
+    top: 43vw;
 
     z-index: 2;
+
+    animation-delay: 4s;
 }
 
 #pop-farvekridt3-downright {
@@ -440,6 +657,8 @@ body {
     top: 42vw;
 
     z-index: 2;
+
+    animation-delay: 16s;
 }
 
 #pop-almond-downright {
@@ -454,6 +673,8 @@ body {
     transform: rotate(-3deg);
 
     z-index: 2;
+
+    animation-delay: 8s;
 }
 
 #pop-butter-downright {
@@ -468,202 +689,5 @@ body {
     transform: rotate(5deg);
 
     z-index: 2;
-}
 
-
-/* UI ELEMENTS */
-
-#ui-liv {
-    position: absolute;
-    width: 10vw;
-    height: 10vw;
-    background-image: url(elements/UI%20liv.svg);
-    background-size: 100%;
-    left: 2vw;
-    top: 1vw;
-}
-
-#ui-livminus {
-    position: absolute;
-    width: 10vw;
-    height: 10vw;
-    background-image: url(elements/UI%20liv%20minus.svg);
-    background-size: 100%;
-    left: 13vw;
-    top: 1vw;
-}
-
-#ui-livminus2 {
-    position: absolute;
-    width: 10vw;
-    height: 10vw;
-    background-image: url(elements/UI%20liv%20minus.svg);
-    background-size: 100%;
-    left: 24vw;
-    top: 1vw;
-}
-
-#ui-timer {
-    position: absolute;
-    width: 30vw;
-    height: 10vw;
-    background-image: url(elements/UI%20timer.svg);
-    background-size: 100%;
-    left: 35vw;
-    top: 1vw;
-}
-
-#ui-counter {
-    position: absolute;
-    width: 15vw;
-    height: 7vw;
-    background-image: url(elements/Counter.svg);
-    background-size: 100%;
-    left: 84vw;
-    top: 2vw;
-}
-
-#ui-setting {
-    position: absolute;
-    width: 10vw;
-    height: 10vw;
-    background-image: url(elements/Settings.svg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-
-    left: 89vw;
-    top: 8vw;
-}
-
-/* STARTSIDE */
-
-#start {
-    display: none;
-}
-
-#start .baggrund {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(elements/Titel%20Baggrund.svg);
-    background-size: 100%;
-}
-
-#start .midgrund {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(elements/Titel%20Midgrund.svg);
-    background-size: 100%;
-}
-
-#start .forgrund {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(elements/Titel%20Forgrund.svg);
-    background-size: 100%;
-}
-
-#start .knap {
-    position: absolute;
-    width: 24vw;
-    height: 10vw;
-    background-image: url(elements/Knap%20-%20Spil%20nu.svg);
-    background-size: 100%;
-
-    left: 38vw;
-    top: 35vw;
-}
-
-/* Game over tabt */
-
-#gameover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(elements/Gamer%20over%20loose.svg);
-    background-size: 100%;
-
-    display: none;
-}
-
-#gameover .replay {
-    position: absolute;
-    width: 20vw;
-    height: 20vw;
-    background-image: url(elements/Replay%20icon.svg);
-    background-size: 100%;
-
-    left: 40vw;
-    top: 32vw;
-
-}
-
-/* Game over vundet */
-
-#levelcomplete {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(elements/Game%20over%20win.svg);
-    background-size: 100%;
-
-    display: none;
-}
-
-#levelcomplete .replay {
-    position: absolute;
-    width: 20vw;
-    height: 20vw;
-    background-image: url(elements/Replay%20icon.svg);
-    background-size: 100%;
-
-    left: 73.5vw;
-    top: 31.5vw;
-}
-
-/* Settings */
-
-#settings {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(elements/Settings%20screen.svg);
-    background-size: 100%;
-
-    display: none;
-}
-
-#settings .close {
-    position: absolute;
-    width: 8vw;
-    height: 8vw;
-    background-image: url(elements/Setting%20close.svg);
-    background-size: 100%;
-
-    left: 61vw;
-    top: 10vw;
-}
-
-#settings .soundon {
-    position: absolute;
-    width: 8vw;
-    height: 8vw;
-    background-image: url(elements/Setting%20sound%20on.svg);
-    background-size: 100%;
-
-    left: 35vw;
-    top: 25vw;
-}
-
-#settings .soundoff {
-    position: absolute;
-    width: 8vw;
-    height: 8vw;
-    background-image: url(elements/Setting%20sound%20off.svg);
-    background-size: 100%;
-
-    left: 49vw;
-    top: 25vw;
 }
