@@ -12,6 +12,8 @@ function showStart() {
     document.querySelector("#start .play").classList.add("pulse");
 }
 
+document.querySelector("#start .play").addEventListener("click", hideStart);
+
 function hideStart() {
     document.querySelector("#start").classList.add("hidestartscreen");
 
@@ -21,7 +23,7 @@ function hideStart() {
 
 }
 
-document.querySelector("#start .play").addEventListener("click", hideStart);
+
 
 
 function startGame() {

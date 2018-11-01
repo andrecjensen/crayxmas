@@ -42,6 +42,78 @@ body {
     }
 }
 
+/* UI ELEMENTS */
+
+#ui-liv {
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    background-image: url(elements/UI%20liv.svg);
+    background-size: 100%;
+    left: 2vw;
+    top: 1vw;
+}
+
+#ui-livminus {
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    background-image: url(elements/UI%20liv%20minus.svg);
+    background-size: 100%;
+    left: 13vw;
+    top: 1vw;
+}
+
+#ui-livminus2 {
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    background-image: url(elements/UI%20liv%20minus.svg);
+    background-size: 100%;
+    left: 24vw;
+    top: 1vw;
+}
+
+#ui-timer {
+    position: absolute;
+    width: 30vw;
+    height: 10vw;
+    background-image: url(elements/UI%20timer.svg);
+    background-size: 100%;
+    left: 35vw;
+    top: 1vw;
+}
+
+p {
+    margin: 0;
+    font-family: 'Leckerli One', cursive;
+    font-size: 4.4em;
+    text-align: right;
+    margin-right: 1.1em;
+}
+
+#ui-counter {
+    position: absolute;
+    width: 22vw;
+    height: 11vw;
+    background-image: url(elements/Counter.svg);
+    background-size: 100%;
+    left: 77vw;
+    top: 1vw;
+}
+
+#ui-setting {
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    background-image: url(elements/Settings.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    left: 89vw;
+    top: 12vw;
+}
+
 /* STARTSIDE */
 
 #start {}
@@ -256,6 +328,7 @@ body {
 
 /* Farvekridte øverst venstre */
 
+
 #pop-farvekridt1-upleft {
     position: absolute;
     width: 10vw;
@@ -269,8 +342,6 @@ body {
     z-index: 1;
 
     animation-delay: 1s;
-
-
 }
 
 #pop-farvekridt2-upleft {
