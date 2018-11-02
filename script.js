@@ -27,6 +27,8 @@ function startGame() {
     document.querySelector("#game").classList.remove("hide");
     document.querySelector("#game").classList.add("showgamescreen");
 
+    // dette anfører at der gives 30 sekunder til at udføre spillet
+    setTimeout(gameOver, 30000);
 
     // Alle farvekridte gøres klikbare og føres til clickCrayon funktionen
     document.querySelector("#pop-farvekridt1-upleft").addEventListener("click", clickCrayon);
@@ -65,8 +67,14 @@ let counter = 0;
 function clickCrayon() {
     //Dette fortælle console log at der gives 1+ til counter(tælleren)
     console.log("click Crayon - 1+ til tælleren");
-    document.querySelector("#pop-farvekridt1-upleft").classList.add("pause");
-    document.querySelector("#pop-farvekridt1-upleft").classList.add("fadeoff");
+
+    console.log(this);
+    this.classList.add("pause");
+    console.log(this);
+    this.classList.add("fadeoff");
+
+    //    document.querySelector("#pop-farvekridt1-upleft").classList.add("pause");
+    //    document.querySelector("#pop-farvekridt1-upleft").classList.add("fadeoff");
 
     // Dette siger at antallet af tallet i "counter" skal plusses med 1.
     counter++;
@@ -93,4 +101,17 @@ function clickGood() {
     // dette trækker et tal ud af antallet af life
     life--;
     console.log(life);
+}
+
+function gameOver() {
+    document.querySelector("#game").classList.add("hide");
+    document.querySelector("#gameover").classList.remove("hide");
+
+    document.querySelector("#replay").addEventListener("click", startOver);
+}
+
+function startOver() {
+    document.querySelector("#gameover").classList.add("hide");
+
+    startGame();
 }
