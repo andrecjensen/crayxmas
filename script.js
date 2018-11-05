@@ -3,11 +3,14 @@ console.log("Dette er Crayxmas-spillet");
 window.addEventListener("load", showStart);
 
 function sidenVises() {
+    console.log("Siden er loadet");
 
     showStart();
 }
 
 function showStart() {
+    console.log("Startskærm vises");
+
     document.querySelector("#start").classList.add("show");
     document.querySelector("#start .play").classList.add("pulse");
     document.querySelector("#start .play").addEventListener("click", hideStart);
@@ -15,6 +18,8 @@ function showStart() {
 
 
 function hideStart() {
+    document.querySelector("#startsound").play();
+
     document.querySelector("#start .play").classList.remove("pulse");
 
     document.querySelector("#start").classList.add("hidestartscreen");
@@ -27,7 +32,9 @@ function startGame() {
     document.querySelector("#game").classList.remove("hide");
     document.querySelector("#game").classList.add("showgamescreen");
 
-    // dette anfører at der gives 30 sekunder til at udføre spillet
+    document.querySelector("#mymusic").play();
+
+    // dette anfører at der gives 30 sekunder til at udføre spillet og at når tiden er løbet tør, vises gameover skærmen
     setTimeout(gameOver, 30000);
 
     // Alle farvekridte gøres klikbare og føres til clickCrayon funktionen
@@ -66,7 +73,9 @@ let counter = 0;
 
 function clickCrayon() {
     //Dette fortælle console log at der gives 1+ til counter(tælleren)
-    console.log("click Crayon - 1+ til tælleren");
+    console.log("click Crayon - 1+ til tælleren og forsvinde-lyd spilles");
+
+    document.querySelector("#crayonclick").play();
 
     console.log(this);
     this.classList.add("pause");
@@ -89,6 +98,8 @@ function clickGood() {
 
     console.log("click good");
 
+    document.querySelector("#goodclick").play();
+
     // fortæller at nissehue selectoren betyder #hue + antallet af life
     let nissehue = "#hue" + life;
 
@@ -101,6 +112,10 @@ function clickGood() {
     // dette trækker et tal ud af antallet af life
     life--;
     console.log(life);
+
+    // her prøver jeg at sige, at hvis life er lig med 0 (nul liv), så skal game over skærmen vises
+
+
 }
 
 function gameOver() {
