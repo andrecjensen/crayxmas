@@ -188,7 +188,7 @@ p {
     top: 1vw;
 }
 
-#ui-setting {
+#ui-settings {
     position: absolute;
     width: 10vw;
     height: 10vw;
@@ -271,8 +271,6 @@ p {
     height: 100%;
     background-image: url(elements/Game%20over%20win.svg);
     background-size: 100%;
-
-    display: none;
 }
 
 #levelcomplete .replay {
