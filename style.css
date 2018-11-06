@@ -72,12 +72,17 @@ body {
 
 @keyframes pop {
     0% {
-
         transform: translateY(0vw);
+        pointer-events: none;
+
+    }
+
+    2% {
+        pointer-events: none;
     }
 
     3% {
-
+        pointer-events: visible;
         transform: translateY(0vw);
     }
 
@@ -86,12 +91,18 @@ body {
     }
 
     10% {
-
         transform: translateY(0vw);
+        pointer-events: visible;
     }
+
+    11% {
+        pointer-events: none;
+    }
+
 
     100% {
         transform: translateY(0vw);
+        pointer-events: none;
     }
 }
 
@@ -292,8 +303,6 @@ p {
     height: 100%;
     background-image: url(elements/Settings%20screen.svg);
     background-size: 100%;
-
-    display: none;
 }
 
 #settings .close {

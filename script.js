@@ -11,18 +11,19 @@ function sidenVises() {
 function showStart() {
     console.log("Startskærm vises");
 
-    document.querySelector("#start").classList.add("show");
     document.querySelector("#start .play").classList.add("pulse");
     document.querySelector("#start .play").addEventListener("click", hideStart);
 
     document.querySelector("#ui-settings").addEventListener("click", showSettings);
-    document.querySelector("#setting_close").addEventListener("click", showSettings);
 }
 
 function showSettings() {
     console.log("showSettings");
-    document.querySelector("#settings").classList.toggle("hide");
 
+    document.querySelector("#start").classList.add("hide");
+    document.querySelector("#settings").classList.remove("hide");
+
+    document.querySelector("#setting .close").addEventListener("click", showStart);
 }
 
 function hideStart() {
@@ -74,6 +75,7 @@ function startGame() {
     document.querySelector("#pop-almond-downright").addEventListener("click", clickGood);
     document.querySelector("#pop-butter-downright").addEventListener("click", clickGood);
 
+    //    document.querySelector(".pop").addEventListener("animationend", )
 }
 
 // Dette anfører at counter starter på 0
