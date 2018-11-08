@@ -63,6 +63,23 @@ body {
     }
 }
 
+.hidestartscreen {
+    animation-name: startfade;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes startfade {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
 .pop {
     animation-name: pop;
     animation-duration: 18s;
@@ -106,41 +123,29 @@ body {
     }
 }
 
-.hidestartscreen {
-    animation-name: startfade;
+.animationpause {
+    animation-play-state: paused;
+}
+
+
+
+/* explode function til figurer */
+
+.explode {
+    animation-name: explode;
     animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes startfade {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-.pause {
-    animation-play-state: pause;
-}
-
-.fadeoff {
-    animation-name: fadeoff;
-    animation-duration: .7s;
     animation-iteration-count: 1;
-    animation-timing-function: cubic-bezier(.59, -0.56, .77, 1.34);
-    animation-fill-mode: forwards;
+    animation-fill-mode: both;
+    animation-timing-function: steps(4);
 }
 
-@keyframes fadeoff {
-    from {
-        transform: scale(1);
+@keyframes explode {
+    0% {
+        background-position: 0 0;
     }
 
-    to {
-        transform: scale(0);
+    100% {
+        background-position: -400% 0;
     }
 }
 
@@ -173,13 +178,117 @@ body {
 
 #ui-timer {
     position: absolute;
-    width: 30vw;
-    height: 10vw;
-    background-image: url(elements/UI%20timer.svg);
-    background-size: 100%;
+    width: 40vw;
+    height: 30vw;
     left: 35vw;
     top: 1vw;
 }
+
+#loadnisskefar {
+    position: absolute;
+
+    left: -4vw;
+    z-index: 10;
+
+    animation: gofar;
+    animation-timing-function: linear;
+    animation-duration: 30s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes gofar {
+    0% {
+        left: -4vw;
+    }
+
+    100% {
+        left: 25vw
+    }
+}
+
+#nisskefar_sprite {
+    width: 11vw;
+    height: 11vw;
+    background-image: url(elements/Nisskefar-animation.svg);
+    background-size: 700% 100%;
+
+}
+
+.loadwalk {
+    animation-name: walk;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(6);
+}
+
+@keyframes walk {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: -600% 0%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+#loadbowl {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    background-image: url(elements/Artboard%2058.svg);
+    background-size: 100%;
+
+    left: 25vw;
+
+    z-index: 9;
+
+}
+
+#loadbar {
+    position: relative;
+    width: 30vw;
+    height: 3.3vw;
+    background-image: url(elements/UI%20timer.svg);
+    background-size: 100%;
+
+    top: 4.5vw;
+
+}
+
+#loadprogress {
+    width: 30vw;
+    height: 3.3vw;
+    border-radius: 20vw;
+    background-color: #fbed21;
+    top: 4.5vw;
+
+    z-index: 8;
+
+    animation: loading;
+    animation-timing-function: linear;
+    animation-duration: 30s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes loading {
+    0% {
+        width: 10%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+#loading {}
+
+
 
 p {
     margin: 0;
@@ -199,16 +308,28 @@ p {
     top: 1vw;
 }
 
-#ui-settings {
+#ui-settings-start {
     position: absolute;
     width: 10vw;
     height: 10vw;
     background-image: url(elements/Settings.svg);
     background-repeat: no-repeat;
     background-size: 100%;
+    left: 89vw;
+    top: 3vw;
+    z-index: 99;
+}
 
+#ui-settings-game {
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    background-image: url(elements/Settings.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
     left: 89vw;
     top: 12vw;
+    z-index: 99;
 }
 
 /* STARTSIDE */
@@ -221,6 +342,7 @@ p {
     height: 100%;
     background-image: url(elements/Titel%20Baggrund.svg);
     background-size: 100%;
+    pointer-events: none;
 }
 
 #start .midgrund {
@@ -229,6 +351,7 @@ p {
     height: 100%;
     background-image: url(elements/Titel%20Midgrund.svg);
     background-size: 100%;
+    pointer-events: none;
 }
 
 #start .forgrund {
@@ -237,6 +360,7 @@ p {
     height: 100%;
     background-image: url(elements/Titel%20Forgrund.svg);
     background-size: 100%;
+    pointer-events: none;
 }
 
 #start .play {
@@ -262,7 +386,7 @@ p {
     background-size: 100%;
 }
 
-#gameover .replay {
+#replay-go {
     position: absolute;
     width: 20vw;
     height: 20vw;
@@ -284,7 +408,7 @@ p {
     background-size: 100%;
 }
 
-#levelcomplete .replay {
+#replay-lc {
     position: absolute;
     width: 20vw;
     height: 20vw;
@@ -316,26 +440,62 @@ p {
     top: 10vw;
 }
 
-#settings .soundon {
+#settings .soundstoggle {
     position: absolute;
-    width: 8vw;
-    height: 8vw;
-    background-image: url(elements/Setting%20sound%20on.svg);
-    background-size: 100%;
+    width: 20vw;
+    top: 8vw;
 
     left: 35vw;
     top: 25vw;
 }
 
-#settings .soundoff {
+#settings .musictoggle {
     position: absolute;
-    width: 8vw;
-    height: 8vw;
-    background-image: url(elements/Setting%20sound%20off.svg);
+    width: 20vw;
+    top: 8vw;
+
+    left: 50vw;
+    top: 25vw;
+}
+
+#settings h4 {
+    margin-top: 0;
+    padding-top: 2.2vw;
+    padding-left: 7vw;
+}
+
+#settings .soundon {
+    position: absolute;
+    width: 7vw;
+    height: 7vw;
+    background-image: url(elements/Setting%20sound%20on.svg);
     background-size: 100%;
 
-    left: 49vw;
-    top: 25vw;
+}
+
+#settings .musicoff {
+    position: absolute;
+    width: 7vw;
+    height: 7vw;
+    background-image: url(elements/Setting%20sound%20off.svg);
+    background-size: 100%;
+}
+
+#settings .musicon {
+    position: absolute;
+    width: 7vw;
+    height: 7vw;
+    background-image: url(elements/Setting%20sound%20on.svg);
+    background-size: 100%;
+
+}
+
+#settings .soundoff {
+    position: absolute;
+    width: 7vw;
+    height: 7vw;
+    background-image: url(elements/Setting%20sound%20off.svg);
+    background-size: 100%;
 }
 
 /* GAME ELEMENTS */
@@ -394,18 +554,18 @@ p {
 
 #pop-farvekridt1-upleft {
     position: absolute;
-    width: 10vw;
+    width: 21vw;
     height: 21vw;
-    background-image: url(elements/Crayon%20Blue.svg);
-    background-size: 100%;
+    background-image: url(elements/crayon-explode1.svg);
+    background-size: 500% 100%;
 
-    left: 26vw;
+    left: 22vw;
     top: 34vw;
 
     z-index: 1;
-
-    animation-delay: 1s;
 }
+
+
 
 #pop-farvekridt2-upleft {
     position: absolute;
@@ -474,9 +634,6 @@ p {
     animation-delay: 9s;
 
 }
-
-
-/* Farvekridte øverst midt */
 
 #pop-farvekridt1-upmid {
     position: absolute;
@@ -552,9 +709,6 @@ p {
     animation-delay: 16s;
 }
 
-
-
-/* Farvekridte øverst højre */
 
 #pop-farvekridt1-upright {
     position: absolute;
@@ -635,8 +789,6 @@ p {
     animation-delay: 8s;
 }
 
-/* Farvekridte nederst venstre */
-
 #pop-farvekridt1-downleft {
     position: absolute;
     width: 10vw;
@@ -714,7 +866,6 @@ p {
     animation-delay: 16s;
 }
 
-/* Farvekridte nederst højre */
 
 #pop-farvekridt1-downright {
     position: absolute;

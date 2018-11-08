@@ -13,16 +13,23 @@
 
     <div id="screen">
         <div id="menu_background"></div>
+
+        <!--   SPILSKÆRM  -->
         <div id="game" class="hide">
+
+            <!--   SPILSKÆRMENS bag- forgrund  -->
             <div id="game_background"></div>
 
             <div id="game-elements">
                 <div id="game_foreground"></div>
-                <!--Grød-delen herunder  -->
+
+                <!-- Hide elementer i grøden  -->
                 <div id="pudding"></div>
                 <div id="pudding_hideback"></div>
                 <div id="pudding_hidefront"></div>
                 <div id="bowl"></div>
+
+                <!--   UI-ELEMENTER: LIV, TIMER, COUNTER OG SETTINGS  -->
                 <div id="energy">
                     <div id="ui-livminus">
                         <div id="hue1" class="ui-liv"></div>
@@ -38,9 +45,9 @@
                 <div id="ui-counter">
                     <p id="counter">0</p>
                 </div>
+                <div id="ui-settings-game"></div>
 
-                <div id="ui-settings"></div>
-
+                <!--   FARVEKRIDTE HERUNDER  -->
                 <!-- UP left-->
                 <div id="pop-farvekridt1-upleft" class="pop"></div>
                 <div id="pop-farvekridt2-upleft" class="pop"></div>
@@ -75,48 +82,56 @@
                 <div id="pop-farvekridt3-downright" class="pop"></div>
                 <div id="pop-almond-downright" class="pop"></div>
                 <div id="pop-butter-downright" class="pop"></div>
-
-
-            </div>
-
-            <div id="game_ui">
-                <div id="counter"></div>
-                <div id="energy"></div>
-                <div id="time"></div>
             </div>
 
         </div>
+
+        <!-- Startskærm -->
         <div id="start">
+            <div id="ui-settings-start"></div>
             <div class="baggrund"></div>
             <div class="midgrund"></div>
             <div class="forgrund"></div>
             <div class="play"></div>
-            <div id="ui-settings"></div>
-
         </div>
+
+        <!-- Settingskærm -->
 
         <div id="settings" class="hide">
             <div class="close"></div>
-            <div class="soundon"></div>
-            <div class="soundoff"></div>
+            <div class="soundstoggle">
+                <div class="soundon"></div>
+                <div class="soundoff hide"></div>
+                <h4>Lyd</h4>
+            </div>
+            <div class="musictoggle">
+                <div class="musicon"></div>
+                <div class="musicoff hide"></div>
+                <h4>Musik</h4>
+            </div>
         </div>
+
+        <!-- Game Over skærm -->
+
         <div id="gameover" class="hide">
-            <div class="replay"></div>
+            <div id="replay-go"></div>
         </div>
+
+        <!-- Level Complete skærm -->
+
         <div id="levelcomplete" class="hide">
-            <div class="replay"></div>
+            <div id="replay-lc"></div>
         </div>
     </div>
 
+    <!--   MUSIK FILER HERUNDER  -->
     <audio id="mymusic" src="sounds/TRG_Banks_-_12_-_No_room_at_the_inn.mp3"></audio>
-    <audio id="startsound" src="sounds/Ringeklokke.mp3"></audio>
-    <audio id="crayonclick" src="sounds/Caryon-click.mp3"></audio>
-    <audio id="goodclick" src="sounds/good-click.mp3"></audio>
-    <audio id="gameover-loose" src="sounds/Gameover-loose.mp3"></audio>
+    <audio id="startsound" class="sfx" src="sounds/Ringeklokke.mp3"></audio>
+    <audio id="crayonclick" class="sfx" src="sounds/Caryon-click.mp3"></audio>
+    <audio id="goodclick" class="sfx" src="sounds/good-click.mp3"></audio>
+    <audio id="gameover-loose" class="sfx" src="sounds/Gameover-loose.mp3"></audio>
 
-
-
-
+    <!--   LINK TIL SCRIPT HERUNDER  -->
     <script src="script.js"></script>
 </body>
 

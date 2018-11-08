@@ -14,16 +14,56 @@ function showStart() {
     document.querySelector("#start .play").classList.add("pulse");
     document.querySelector("#start .play").addEventListener("click", hideStart);
 
-    document.querySelector("#ui-settings").addEventListener("click", showSettings);
+    document.querySelector("#ui-settings-start").addEventListener("click", showSettings);
 }
 
 function showSettings() {
+
     console.log("showSettings");
 
     document.querySelector("#start").classList.add("hide");
     document.querySelector("#settings").classList.remove("hide");
 
-    document.querySelector("#setting .close").addEventListener("click", showStart);
+    document.querySelector(".soundstoggle").addEventListener("click", toggleSound);
+
+    document.querySelector(".musictoggle").addEventListener("click", toggleMusic);
+
+    document.querySelector(".close").addEventListener("click", showStart);
+}
+
+
+function toggleSound() {
+    console.log("toggleSound");
+    document.querySelector(".soundon").classList.toggle("hide");
+    document.querySelector(".soundoff").classList.toggle("hide");
+
+}
+
+function toggleMusic() {
+    console.log("toggleMusic");
+    document.querySelector(".musicon").classList.toggle("hide");
+    document.querySelector(".musicoff").classList.toggle("hide");
+
+}
+
+function soundsOff() {
+    console.log("soundsOff function værdi er " + showSettingsEffektSound);
+
+}
+
+function soundsOn() {
+    console.log("soundsOn function værdi er " + showSettingsEffektSound);
+
+}
+
+function musicOff() {
+    console.log("soundsOff function værdi er " + showSettingsEffektSound);
+
+}
+
+function musicOn() {
+    console.log("soundsOn function værdi er " + showSettingsEffektSound);
+
 }
 
 function hideStart() {
@@ -40,6 +80,7 @@ function startGame() {
     document.querySelector("#start").classList.add("hide");
     document.querySelector("#game").classList.remove("hide");
     document.querySelector("#game").classList.add("showgamescreen");
+
 
     document.querySelector("#mymusic").play();
 
@@ -75,7 +116,7 @@ function startGame() {
     document.querySelector("#pop-almond-downright").addEventListener("click", clickGood);
     document.querySelector("#pop-butter-downright").addEventListener("click", clickGood);
 
-    //    document.querySelector(".pop").addEventListener("animationend", )
+    document.querySelector("#ui-settings-game").addEventListener("click", showSettings);
 }
 
 // Dette anfører at counter starter på 0
@@ -86,20 +127,33 @@ function clickCrayon() {
     console.log("click Crayon - 1+ til tælleren og forsvinde-lyd spilles");
 
     if (counter < 1) {
+
+        // Lyd fil startes
         document.querySelector("#crayonclick").play();
 
-        console.log(this);
-        this.classList.add("pause");
-        console.log(this);
-        this.classList.add("fadeoff");
 
-        //    document.querySelector("#pop-farvekridt1-upleft").classList.add("pause");
-        //    document.querySelector("#pop-farvekridt1-upleft").classList.add("fadeoff");
+        console.log(this);
+        var thisPosition = this.getBoundingClientRect().top;
+        var heightHalf = 21 / 2;
+
+        console.log(thisPosition);
+
+        this.classList.add("animationpause");
+        document.querySelector("#pop-farvekridt1-upleft").style.top = "calc(" + thisPosition + "px + " + heightHalf + "vw)";
+
+
+        setTimeout(function () {
+            //            document.querySelector("#pop-farvekridt1-upleft").classList.remove("pop");
+
+            //            document.querySelector("#pop-farvekridt1-upleft").classList.add("explode");
+
+        }, 500)
 
         // Dette siger at antallet af tallet i "counter" skal plusses med 1.
         counter++;
         //Dette ændrer indholdet af "counter" div'et til det aktuelle tal
         document.querySelector("#counter").innerHTML = counter;
+
     } else {
         levelComplete();
     }
@@ -138,16 +192,17 @@ function gameOver() {
     document.querySelector("#game").classList.add("hide");
     document.querySelector("#gameover").classList.remove("hide");
 
-    document.querySelector(".replay").addEventListener("click", startOver);
+    document.querySelector("#replay-go").addEventListener("click", startOver);
 }
 
 function levelComplete() {
     document.querySelector("#game").classList.add("hide");
     document.querySelector("#levelcomplete").classList.remove("hide");
 
-    document.querySelector(".replay").addEventListener("click", startOver);
+    document.querySelector("#replay-lc").addEventListener("click", startOver);
 }
 
 function startOver() {
+    console.log("Click replay");
     window.location.reload(false);
 }
