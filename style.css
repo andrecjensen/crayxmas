@@ -3,6 +3,11 @@ body {
     /*    background-color: #050a0f;*/
 }
 
+h4 {
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+}
+
 #screen {
     position: relative;
 
@@ -90,36 +95,31 @@ body {
 @keyframes pop {
     0% {
         transform: translateY(0vw);
-        pointer-events: none;
-
     }
 
     2% {
-        pointer-events: none;
+        transform: translateY(0vw);
     }
 
     3% {
-        pointer-events: visible;
-        transform: translateY(0vw);
+        transform: translateY(-26vw);
     }
 
     6% {
-        transform: translateY(-10vw);
+        transform: translateY(-36vw);
     }
 
     10% {
-        transform: translateY(0vw);
-        pointer-events: visible;
+        transform: translateY(-26vw);
     }
 
     11% {
-        pointer-events: none;
+        transform: translateY(0vw);
     }
 
 
     100% {
         transform: translateY(0vw);
-        pointer-events: none;
     }
 }
 
@@ -127,11 +127,10 @@ body {
     animation-play-state: paused;
 }
 
-
-
 /* explode function til figurer */
 
 .explode {
+    animation-play-state: running;
     animation-name: explode;
     animation-duration: 0.3s;
     animation-iteration-count: 1;
@@ -202,7 +201,7 @@ body {
     }
 
     100% {
-        left: 25vw
+        left: 23vw
     }
 }
 
@@ -211,6 +210,7 @@ body {
     height: 11vw;
     background-image: url(elements/Nisskefar-animation.svg);
     background-size: 700% 100%;
+
 
 }
 
@@ -286,9 +286,6 @@ body {
     }
 }
 
-#loading {}
-
-
 
 p {
     margin: 0;
@@ -341,9 +338,32 @@ p {
     width: 100%;
     height: 100%;
     background-image: url(elements/Titel%20Baggrund.svg);
-    background-size: 100%;
+    background-size: 300% 100%;
     pointer-events: none;
+
+/*
+    animation-name: snoww;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(2);
+*/
 }
+
+/*
+@keyframes snoww {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: -200% 0%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+*/
 
 #start .midgrund {
     position: absolute;
@@ -551,6 +571,19 @@ p {
 
 /* Farvekridte øverst venstre */
 
+#pop-farvekridt-upleft {
+    position: absolute;
+    width: 21vw;
+    height: 21vw;
+    background-image: url(elements/crayon-explode1.svg);
+    background-size: 500% 100%;
+
+    left: 5vw;
+    top: 15vw;
+
+    z-index: 1;
+}
+
 
 #pop-farvekridt1-upleft {
     position: absolute;
@@ -560,7 +593,7 @@ p {
     background-size: 500% 100%;
 
     left: 22vw;
-    top: 34vw;
+    top: 60vw;
 
     z-index: 1;
 }
@@ -569,13 +602,13 @@ p {
 
 #pop-farvekridt2-upleft {
     position: absolute;
-    width: 10vw;
+    width: 21vw;
     height: 21vw;
-    background-image: url(elements/Crayon%20green.svg);
-    background-size: 100%;
+    background-image: url(elements/crayon-explode2.svg);
+    background-size: 500% 100%;
 
-    left: 26vw;
-    top: 34vw;
+    left: 22vw;
+    top: 60vw;
 
     z-index: 1;
 
@@ -587,13 +620,13 @@ p {
 
 #pop-farvekridt3-upleft {
     position: absolute;
-    width: 10vw;
+    width: 21vw;
     height: 21vw;
-    background-image: url(elements/Crayon%20Yellow.svg);
-    background-size: 100%;
+    background-image: url(elements/crayon-explode3.svg);
+    background-size: 500% 100%;
 
-    left: 26vw;
-    top: 32vw;
+    left: 22vw;
+    top: 60vw;
 
     z-index: 1;
 
@@ -603,13 +636,13 @@ p {
 
 #pop-almond-upleft {
     position: absolute;
-    width: 10vw;
+    width: 16vw;
     height: 16vw;
-    background-image: url(elements/God%20ting%20-%20mandel.svg);
-    background-size: 100%;
+    background-image: url(elements/good-explode2.svg);
+    background-size: 500% 100%;
 
-    left: 27vw;
-    top: 34vw;
+    left: 22vw;
+    top: 60vw;
     transform: rotate(-10deg);
 
     z-index: 1;
@@ -620,13 +653,13 @@ p {
 
 #pop-butter-upleft {
     position: absolute;
-    width: 10vw;
+    width: 16vw;
     height: 16vw;
-    background-image: url(elements/God%20ting%20-%20sm%C3%B8r.svg);
-    background-size: 100%;
+    background-image: url(elements/good-explode2_1.svg);
+    background-size: 500% 100%;
 
-    left: 27vw;
-    top: 34vw;
+    left: 22vw;
+    top: 60vw;
     transform: rotate(-10deg);
 
     z-index: 1;
@@ -635,6 +668,7 @@ p {
 
 }
 
+/*
 #pop-farvekridt1-upmid {
     position: absolute;
     width: 10vw;
@@ -643,7 +677,7 @@ p {
     background-size: 100%;
 
     left: 42vw;
-    top: 29vw;
+    top: 55vw;
 
     z-index: 1;
 
@@ -659,7 +693,7 @@ p {
     background-size: 100%;
 
     left: 42vw;
-    top: 29vw;
+    top: 55vw;
     z-index: 1;
 
     animation-delay: 4s;
@@ -673,7 +707,7 @@ p {
     background-size: 100%;
 
     left: 42vw;
-    top: 29vw;
+    top: 55vw;
     z-index: 1;
 
     animation-delay: 6s;
@@ -687,7 +721,7 @@ p {
     background-size: 100%;
 
     left: 42vw;
-    top: 29vw;
+    top: 55vw;
 
     z-index: 1;
 
@@ -702,7 +736,7 @@ p {
     background-size: 100%;
 
     left: 42vw;
-    top: 29vw;
+    top: 55vw;
 
     z-index: 1;
 
@@ -718,7 +752,7 @@ p {
     background-size: 100%;
 
     left: 60vw;
-    top: 32vw;
+    top: 58vw;
 
     z-index: 1;
 
@@ -733,7 +767,7 @@ p {
     background-size: 100%;
 
     left: 60vw;
-    top: 33vw;
+    top: 59vw;
 
     z-index: 1;
 
@@ -748,7 +782,7 @@ p {
     background-size: 100%;
 
     left: 60vw;
-    top: 32vw;
+    top: 58vw;
 
     z-index: 1;
 
@@ -763,7 +797,7 @@ p {
     background-size: 100%;
 
     left: 60vw;
-    top: 33vw;
+    top: 59vw;
 
     transform: rotate(10deg);
 
@@ -780,7 +814,7 @@ p {
     background-size: 100%;
 
     left: 61vw;
-    top: 32vw;
+    top: 58vw;
 
     transform: rotate(10deg);
 
@@ -797,7 +831,7 @@ p {
     background-size: 100%;
 
     left: 29vw;
-    top: 42vw;
+    top: 68vw;
 
     z-index: 2;
 
@@ -812,7 +846,7 @@ p {
     background-size: 100%;
 
     left: 29vw;
-    top: 43vw;
+    top: 69vw;
 
     z-index: 2;
 
@@ -827,7 +861,7 @@ p {
     background-size: 100%;
 
     left: 29vw;
-    top: 42vw;
+    top: 68vw;
 
     z-index: 2;
 
@@ -842,7 +876,7 @@ p {
     background-size: 100%;
 
     left: 29vw;
-    top: 42vw;
+    top: 68vw;
 
     transform: rotate(10deg);
 
@@ -857,7 +891,7 @@ p {
     background-size: 100%;
 
     left: 29vw;
-    top: 42vw;
+    top: 68vw;
 
     transform: rotate(10deg);
 
@@ -875,7 +909,7 @@ p {
     background-size: 100%;
 
     left: 52vw;
-    top: 42vw;
+    top: 68vw;
 
     z-index: 2;
 
@@ -892,7 +926,7 @@ p {
     background-size: 100%;
 
     left: 48vw;
-    top: 43vw;
+    top: 68vw;
 
     z-index: 2;
 
@@ -907,7 +941,7 @@ p {
     background-size: 100%;
 
     left: 57vw;
-    top: 42vw;
+    top: 68vw;
 
     z-index: 2;
 
@@ -922,7 +956,7 @@ p {
     background-size: 100%;
 
     left: 49vw;
-    top: 42vw;
+    top: 68vw;
     transform: rotate(-3deg);
 
     z-index: 2;
@@ -938,9 +972,10 @@ p {
     background-size: 100%;
 
     left: 56vw;
-    top: 42vw;
+    top: 68vw;
     transform: rotate(5deg);
 
     z-index: 2;
 
 }
+*/

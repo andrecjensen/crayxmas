@@ -1,6 +1,9 @@
-console.log("Dette er Crayxmas-spillet");
+console.log("Dette er Crayxmas-spillet. Musik af No room at the inn by TRG Banks");
 
 window.addEventListener("load", showStart);
+
+let showSettingsEffektSound = true;
+let showSettingsMusic = true;
 
 function sidenVises() {
     console.log("Siden er loadet");
@@ -21,14 +24,26 @@ function showSettings() {
 
     console.log("showSettings");
 
-    document.querySelector("#start").classList.add("hide");
-    document.querySelector("#settings").classList.remove("hide");
+    document.querySelector("*").classList.add("animationpause");
+    document.querySelector("#settings").classList.toggle("hide");
 
+    document.querySelector("#ui-settings-start").classList.toggle("hide");
     document.querySelector(".soundstoggle").addEventListener("click", toggleSound);
 
     document.querySelector(".musictoggle").addEventListener("click", toggleMusic);
 
-    document.querySelector(".close").addEventListener("click", showStart);
+    document.querySelector(".close").addEventListener("click", hideSettings);
+}
+
+function hideSettings() {
+
+    console.log("hideSettings");
+
+    document.querySelector("*").classList.remove("animationpause");
+
+    document.querySelector("#settings").classList.toggle("hide");
+
+    document.querySelector("#ui-settings-start").classList.toggle("hide");
 }
 
 
@@ -37,6 +52,32 @@ function toggleSound() {
     document.querySelector(".soundon").classList.toggle("hide");
     document.querySelector(".soundoff").classList.toggle("hide");
 
+    if (showSettingsEffektSound == false) {
+        //her klikker vi lyden på
+        showSettingsEffektSound = true;
+        soundsOn();
+
+        //        soundsOff();
+    } else {
+        //her kikker vi lyden af - slukker den
+        showSettingsEffektSound = false;
+        soundsOff();
+        //        soundsOn();
+    }
+
+}
+
+function soundsOff() {
+    console.log("soundsOff function værdi er " + showSettingsEffektSound);
+
+    //    her slukkes for efx
+    document.querySelector(".sfx").muted = true;
+
+}
+
+function soundsOn() {
+    console.log("soundsOn function værdi er " + showSettingsEffektSound);
+    document.querySelector(".sfx").muted = false;
 }
 
 function toggleMusic() {
@@ -44,26 +85,30 @@ function toggleMusic() {
     document.querySelector(".musicon").classList.toggle("hide");
     document.querySelector(".musicoff").classList.toggle("hide");
 
-}
+    if (showSettingsMusic == false) {
+        //her klikker vi lyden på
+        showSettingsMusic = true;
+        musicOn();
 
-function soundsOff() {
-    console.log("soundsOff function værdi er " + showSettingsEffektSound);
-
-}
-
-function soundsOn() {
-    console.log("soundsOn function værdi er " + showSettingsEffektSound);
+        //        soundsOff();
+    } else {
+        //her kikker vi lyden af - slukker den
+        showSettingsMusic = false;
+        musicOff();
+        //        soundsOn();
+    }
 
 }
 
 function musicOff() {
-    console.log("soundsOff function værdi er " + showSettingsEffektSound);
+    console.log("musicOff function værdi er " + showSettingsMusic);
+    document.querySelector("#mymusic").pause();
 
 }
 
 function musicOn() {
-    console.log("soundsOn function værdi er " + showSettingsEffektSound);
-
+    console.log("musicOff function værdi er " + showSettingsMusic);
+    document.querySelector("#mymusic").play();
 }
 
 function hideStart() {
@@ -85,9 +130,11 @@ function startGame() {
     document.querySelector("#mymusic").play();
 
     // dette anfører at der gives 30 sekunder til at udføre spillet og at når tiden er løbet tør, vises gameover skærmen
-    setTimeout(gameOver, 300000);
+    setTimeout(gameOver, 30000);
 
     // Alle farvekridte gøres klikbare og føres til clickCrayon funktionen
+    document.querySelector("#pop-farvekridt-upleft").addEventListener("click", clickCrayon);
+
     document.querySelector("#pop-farvekridt1-upleft").addEventListener("click", clickCrayon);
     document.querySelector("#pop-farvekridt2-upleft").addEventListener("click", clickCrayon);
     document.querySelector("#pop-farvekridt3-upleft").addEventListener("click", clickCrayon);
@@ -126,34 +173,20 @@ function clickCrayon() {
     //Dette fortælle console log at der gives 1+ til counter(tælleren)
     console.log("click Crayon - 1+ til tælleren og forsvinde-lyd spilles");
 
-    if (counter < 1) {
+    //Dette fortælle console log at der gives 1+ til counter(tælleren)
+    console.log("click Crayon - 1+ til tælleren og forsvinde-lyd spilles");
 
-        // Lyd fil startes
+    if (counter < 14) {
         document.querySelector("#crayonclick").play();
 
-
         console.log(this);
-        var thisPosition = this.getBoundingClientRect().top;
-        var heightHalf = 21 / 2;
-
-        console.log(thisPosition);
-
-        this.classList.add("animationpause");
-        document.querySelector("#pop-farvekridt1-upleft").style.top = "calc(" + thisPosition + "px + " + heightHalf + "vw)";
-
-
-        setTimeout(function () {
-            //            document.querySelector("#pop-farvekridt1-upleft").classList.remove("pop");
-
-            //            document.querySelector("#pop-farvekridt1-upleft").classList.add("explode");
-
-        }, 500)
+                this.classList.add("animationpause");
+        this.classList.add("explode");
 
         // Dette siger at antallet af tallet i "counter" skal plusses med 1.
         counter++;
         //Dette ændrer indholdet af "counter" div'et til det aktuelle tal
         document.querySelector("#counter").innerHTML = counter;
-
     } else {
         levelComplete();
     }
@@ -204,5 +237,6 @@ function levelComplete() {
 
 function startOver() {
     console.log("Click replay");
+
     window.location.reload(false);
 }
