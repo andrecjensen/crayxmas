@@ -14,8 +14,7 @@ h4 {
     width: 100vw;
     height: 56.25vw;
 
-    /*    overflow: hidden;
-    */
+    overflow: hidden;
     cursor: cell;
 
 }
