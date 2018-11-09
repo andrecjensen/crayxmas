@@ -70,7 +70,7 @@ function toggleSound() {
 function soundsOff() {
     console.log("soundsOff function værdi er " + showSettingsEffektSound);
 
-    //    her slukkes for efx
+    //    her slukkes for sfx
     document.querySelector(".sfx").muted = true;
 
 }
@@ -122,19 +122,27 @@ function hideStart() {
 
 
 function startGame() {
+    console.log("Spillet startes");
     document.querySelector("#start").classList.add("hide");
     document.querySelector("#game").classList.remove("hide");
     document.querySelector("#game").classList.add("showgamescreen");
 
 
-    document.querySelector("#mymusic").play();
+    // Denne if/else fortæller console om musikken i settings er slået til eller ikke. Hvis den er slået fra (if) så startes musikken ikke. Hvis den er slået til (else) så startes musikken
+    if (showSettingsMusic == false) {
+
+        console.log("Musik startes ikke");
+
+
+    } else {
+        console.log("Musik startes");
+        document.querySelector("#mymusic").play();
+    }
 
     // dette anfører at der gives 30 sekunder til at udføre spillet og at når tiden er løbet tør, vises gameover skærmen
     setTimeout(gameOver, 30000);
 
     // Alle farvekridte gøres klikbare og føres til clickCrayon funktionen
-    document.querySelector("#pop-farvekridt-upleft").addEventListener("click", clickCrayon);
-
     document.querySelector("#pop-farvekridt1-upleft").addEventListener("click", clickCrayon);
     document.querySelector("#pop-farvekridt2-upleft").addEventListener("click", clickCrayon);
     document.querySelector("#pop-farvekridt3-upleft").addEventListener("click", clickCrayon);
@@ -171,17 +179,28 @@ let counter = 0;
 
 function clickCrayon() {
     //Dette fortælle console log at der gives 1+ til counter(tælleren)
-    console.log("click Crayon - 1+ til tælleren og forsvinde-lyd spilles");
+    console.log("click Crayon");
 
-    //Dette fortælle console log at der gives 1+ til counter(tælleren)
-    console.log("click Crayon - 1+ til tælleren og forsvinde-lyd spilles");
+
+    // if/else funktionen herunder fortæller, at hvis lyd er slået fra (if) så afspilles ingen lyd (funktionen findes ikke). Men hvis lyd er slået til, så afspilles lyd (else)
+
+    if (showSettingsEffektSound == false) {
+        console.log("Lyd er slået fra = ingen lyd");
+
+    } else {
+
+        console.log("Lyd afspilles");
+        document.querySelector("#crayonclick").play();
+    }
 
     if (counter < 14) {
-        document.querySelector("#crayonclick").play();
+
 
         console.log(this);
-                this.classList.add("animationpause");
+        this.classList.remove("pop");
+        this.classList.remove("delay");
         this.classList.add("explode");
+
 
         // Dette siger at antallet af tallet i "counter" skal plusses med 1.
         counter++;
@@ -201,6 +220,12 @@ function clickGood() {
 
     if (life > 0) {
         document.querySelector("#goodclick").play();
+
+
+        console.log(this);
+        this.classList.remove("pop");
+        this.classList.remove("delay");
+        this.classList.add("explode");
 
         // fortæller at nissehue selectoren betyder #hue + antallet af life
         let nissehue = "#hue" + life;
